@@ -11,6 +11,12 @@
 		2162D2CC2C17DD6900DC8F8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162D2CB2C17DD6900DC8F8D /* ContentView.swift */; };
 		2162D2CE2C17DD6A00DC8F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2162D2CD2C17DD6A00DC8F8D /* Assets.xcassets */; };
 		2162D2D12C17DD6A00DC8F8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2162D2D02C17DD6A00DC8F8D /* Preview Assets.xcassets */; };
+		3C900FB92C1A26A30051D518 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FB82C1A26A30051D518 /* DataSource.swift */; };
+		3C900FBB2C1A26F70051D518 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FBA2C1A26F70051D518 /* Session.swift */; };
+		3C900FBD2C1A2DAB0051D518 /* SessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FBC2C1A2DAB0051D518 /* SessionListView.swift */; };
+		3C900FBF2C1A2DBB0051D518 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FBE2C1A2DBB0051D518 /* SessionDetailView.swift */; };
+		3C900FC12C1A2DE00051D518 /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FC02C1A2DE00051D518 /* FavoritesListView.swift */; };
+		3C900FC32C1A2E2F0051D518 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FC22C1A2E2F0051D518 /* ListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		2162D2CB2C17DD6900DC8F8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2162D2CD2C17DD6A00DC8F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2162D2D02C17DD6A00DC8F8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3C900FB82C1A26A30051D518 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		3C900FBA2C1A26F70051D518 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		3C900FBC2C1A2DAB0051D518 /* SessionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListView.swift; sourceTree = "<group>"; };
+		3C900FBE2C1A2DBB0051D518 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		3C900FC02C1A2DE00051D518 /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
+		3C900FC22C1A2E2F0051D518 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,12 @@
 				2162D2CB2C17DD6900DC8F8D /* ContentView.swift */,
 				2162D2CD2C17DD6A00DC8F8D /* Assets.xcassets */,
 				2162D2CF2C17DD6A00DC8F8D /* Preview Content */,
+				3C900FBA2C1A26F70051D518 /* Session.swift */,
+				3C900FB82C1A26A30051D518 /* DataSource.swift */,
+				3C900FC22C1A2E2F0051D518 /* ListItemView.swift */,
+				3C900FBC2C1A2DAB0051D518 /* SessionListView.swift */,
+				3C900FBE2C1A2DBB0051D518 /* SessionDetailView.swift */,
+				3C900FC02C1A2DE00051D518 /* FavoritesListView.swift */,
 			);
 			path = NatureWalk;
 			sourceTree = "<group>";
@@ -137,7 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C900FBB2C1A26F70051D518 /* Session.swift in Sources */,
+				3C900FB92C1A26A30051D518 /* DataSource.swift in Sources */,
 				2162D2CC2C17DD6900DC8F8D /* ContentView.swift in Sources */,
+				3C900FC32C1A2E2F0051D518 /* ListItemView.swift in Sources */,
+				3C900FC12C1A2DE00051D518 /* FavoritesListView.swift in Sources */,
+				3C900FBD2C1A2DAB0051D518 /* SessionListView.swift in Sources */,
+				3C900FBF2C1A2DBB0051D518 /* SessionDetailView.swift in Sources */,
 				2162D2CA2C17DD6900DC8F8D /* NatureWalkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
