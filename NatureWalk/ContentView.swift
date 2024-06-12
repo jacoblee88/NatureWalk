@@ -65,6 +65,9 @@ struct ContentView: View {
                    let user = try? JSONDecoder().decode(User.self, from: data) {
                     email = user.email
                     password = user.password
+                } else {
+                    email = ""
+                    password = ""
                 }
             }
         }

@@ -11,6 +11,8 @@ struct SessionListView: View {
     
     @StateObject var dataSource : DataSource = DataSource()
     
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -22,8 +24,40 @@ struct SessionListView: View {
             .navigationTitle(Text("Sessions List"))
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden()
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Button(action: {
+                            favoritesList()
+                        }, label: {
+                            Text("FavoritesList")
+                        })
+                        
+                        Button(action: {
+                            logout()
+                        }, label: {
+                            Text("Logout")
+                        })
+                    } label: {
+                        Image(systemName: "gear")
+                            .foregroundStyle(.blue)
+                    }
+
+                }
+            }
         } //NavigationStack
     } //body
+    
+    private func favoritesList() {
+        
+    }
+    
+    
+    private func logout() {
+        userDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
+        dismiss()
+    }
+    
 } //SessionListView
 
 #Preview {
