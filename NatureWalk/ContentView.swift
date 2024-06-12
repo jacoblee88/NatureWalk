@@ -8,14 +8,99 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var email: String = ""
+    @State private var password: String = ""
+    
+    @State private var isRememberMe: Bool = false
+    
+    @State private var showAlert: Bool = false
+    
+    @State private var message: String = ""
+    
+    @State private var linkSelection : Int? = nil
+    
+    private let predefinedUsers: [User] = [
+        User(email: "test@gmail.com", password: "test123"),
+        User(email: "admin@gmail.com", password: "admin123")
+    ]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            VStack {
+                
+                NavigationLink(
+                    destination: ContentView(),
+                    tag: 1,
+                    selection: self.$linkSelection){}
+                
+                Form{
+                    TextField("Email", text: $email)
+                        .keyboardType(.emailAddress)
+                    
+                    SecureField("Password", text: $password)
+                    
+                    Toggle(isOn: $isRememberMe) {
+                        Text("Remember Me")
+                    }
+                    
+                    Section {
+                        Button(action: {
+                            login()
+                        }, label: {
+                            Text("Login")
+                        })
+                        .alert(isPresented: $showAlert) {
+                            Alert(title: Text("Result"),
+                                  message: Text(self.message),
+                                  dismissButton: .default(Text("Dismiss"), action: {
+                            }))
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Login")
+            .onAppear() {
+                if let data = UserDefaults.standard.value(forKey: UserDefaultsKey.user.rawValue) as? Data,
+                   let user = try? PropertyListDecoder().decode(User.self, from: data) {
+                    email = user.email
+                    password = user.password
+                }
+            }
         }
-        .padding()
+        
+    }
+    
+    private func login() {
+        guard !email.isEmpty else {
+            message = ""
+            showAlert = true
+            return
+        }
+        
+        guard !password.isEmpty else {
+            message = ""
+            showAlert = true
+            return
+        }
+        
+        guard let user = predefinedUsers.first(where: { $0.email == email }) else {
+            message = ""
+            showAlert = true
+            return
+        }
+        
+        guard user.password == password else {
+            message = ""
+            showAlert = true
+            return
+        }
+        linkSelection = 1
+        let newUser = User(email: email, password: password)
+        if isRememberMe {
+            userDefaults.set(try? PropertyListEncoder().encode(newUser), forKey: UserDefaultsKey.user.rawValue)
+        }
+        
     }
 }
 
