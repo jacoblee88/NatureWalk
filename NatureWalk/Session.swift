@@ -18,4 +18,14 @@ struct Session : Identifiable{
     var pricing: Double
     var phone: String
     
+    init(name: String, description: String, starRating: Int, organizationName: String, photo: [String], pricing: Double, phone: String) {
+        self.name = name
+        self.description = description
+        self.starRating = starRating
+        self.organizationName = organizationName
+        self.photo = photo
+        self.pricing = pricing
+        self.phone = phone
+    }
+    
 }

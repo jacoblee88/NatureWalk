@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct SessionListView: View {
+    
+    @StateObject var dataSource : DataSource = DataSource()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        NavigationStack{
+            VStack{
+                List(dataSource.sessionList){ session in
+                    ListItemView(session: session).environmentObject(self.dataSource)
+                }
+            } //VStack
+//            .padding()
+            .navigationTitle(Text("Sessions List"))
+            .navigationBarTitleDisplayMode(.large)
+        } //NavigationStack
+    } //body
+} //SessionListView
 
 #Preview {
     SessionListView()

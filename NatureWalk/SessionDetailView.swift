@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct SessionDetailView: View {
+    
+    @State var selectedSession : Session
+    @EnvironmentObject var dataSource : DataSource
+    
+    
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    SessionDetailView()
+    SessionDetailView(selectedSession: Session(name: "NA", description: "NA", starRating: 1, organizationName: "NA", photo: ["NA", "NA"], pricing: 1.0, phone: "NA"))
 }
