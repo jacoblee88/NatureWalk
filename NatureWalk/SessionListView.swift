@@ -21,6 +21,7 @@ struct SessionListView: View {
 //            .padding()
             .navigationTitle(Text("Sessions List"))
             .navigationBarTitleDisplayMode(.large)
+            .navigationBarBackButtonHidden()
         } //NavigationStack
     } //body
 } //SessionListView

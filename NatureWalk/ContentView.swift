@@ -30,7 +30,7 @@ struct ContentView: View {
             VStack {
                 
                 NavigationLink(
-                    destination: ContentView(),
+                    destination: SessionListView(),
                     tag: 1,
                     selection: self.$linkSelection){}
                 
