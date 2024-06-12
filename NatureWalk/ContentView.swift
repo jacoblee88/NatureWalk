@@ -62,7 +62,7 @@ struct ContentView: View {
             .navigationTitle("Login")
             .onAppear() {
                 if let data = UserDefaults.standard.value(forKey: UserDefaultsKey.user.rawValue) as? Data,
-                   let user = try? PropertyListDecoder().decode(User.self, from: data) {
+                   let user = try? JSONDecoder().decode(User.self, from: data) {
                     email = user.email
                     password = user.password
                 }
@@ -73,32 +73,32 @@ struct ContentView: View {
     
     private func login() {
         guard !email.isEmpty else {
-            message = ""
+            message = "Please input you email!"
             showAlert = true
             return
         }
         
         guard !password.isEmpty else {
-            message = ""
+            message = "Please input you assword!"
             showAlert = true
             return
         }
         
         guard let user = predefinedUsers.first(where: { $0.email == email }) else {
-            message = ""
+            message = "The email address is incorrect!"
             showAlert = true
             return
         }
         
         guard user.password == password else {
-            message = ""
+            message = "The password is incorrect!"
             showAlert = true
             return
         }
         linkSelection = 1
         let newUser = User(email: email, password: password)
         if isRememberMe {
-            userDefaults.set(try? PropertyListEncoder().encode(newUser), forKey: UserDefaultsKey.user.rawValue)
+            userDefaults.set(try? JSONEncoder().encode(newUser), forKey: UserDefaultsKey.user.rawValue)
         }
         
     }
