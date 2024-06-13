@@ -11,6 +11,8 @@ struct SessionListView: View {
     
     @StateObject var dataSource : DataSource = DataSource()
     
+    @StateObject var favoritesListDataSource : FavoritesListDataSource = FavoritesListDataSource()
+
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -25,6 +27,7 @@ struct SessionListView: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden()
             .shareToolbar()
+//            .environmentObject(favoritesListDataSource)
 //            .toolbar{
 //                ToolbarItem(placement: .topBarTrailing) {
 //                    Menu {
@@ -46,7 +49,9 @@ struct SessionListView: View {
 //
 //                }
 //            }
-        } //NavigationStack
+        }
+        .environmentObject(dataSource)
+        .environmentObject(favoritesListDataSource)//NavigationStack
     } //body
     
 //    private func favoritesList() {

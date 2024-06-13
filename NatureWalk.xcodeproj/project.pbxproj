@@ -13,6 +13,7 @@
 		2162D2D12C17DD6A00DC8F8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2162D2D02C17DD6A00DC8F8D /* Preview Assets.xcassets */; };
 		21F4906F2C1A2AF000016D22 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4906E2C1A2AF000016D22 /* User.swift */; };
 		21F490732C1A31BC00016D22 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F490722C1A31BC00016D22 /* UserDefaultsManager.swift */; };
+		21F490752C1B5BC500016D22 /* FavoritesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F490742C1B5BC500016D22 /* FavoritesListDataSource.swift */; };
 		3C900FB92C1A26A30051D518 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FB82C1A26A30051D518 /* DataSource.swift */; };
 		3C900FBB2C1A26F70051D518 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FBA2C1A26F70051D518 /* Session.swift */; };
 		3C900FBD2C1A2DAB0051D518 /* SessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C900FBC2C1A2DAB0051D518 /* SessionListView.swift */; };
@@ -30,6 +31,7 @@
 		2162D2D02C17DD6A00DC8F8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21F4906E2C1A2AF000016D22 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21F490722C1A31BC00016D22 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		21F490742C1B5BC500016D22 /* FavoritesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListDataSource.swift; sourceTree = "<group>"; };
 		3C900FB82C1A26A30051D518 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		3C900FBA2C1A26F70051D518 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		3C900FBC2C1A2DAB0051D518 /* SessionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				2162D2CF2C17DD6A00DC8F8D /* Preview Content */,
 				3C900FBA2C1A26F70051D518 /* Session.swift */,
 				3C900FB82C1A26A30051D518 /* DataSource.swift */,
+				21F490742C1B5BC500016D22 /* FavoritesListDataSource.swift */,
 				3C900FC22C1A2E2F0051D518 /* ListItemView.swift */,
 				3C900FBC2C1A2DAB0051D518 /* SessionListView.swift */,
 				3C900FBE2C1A2DBB0051D518 /* SessionDetailView.swift */,
@@ -174,6 +177,7 @@
 				3C900FBF2C1A2DBB0051D518 /* SessionDetailView.swift in Sources */,
 				2162D2CA2C17DD6900DC8F8D /* NatureWalkApp.swift in Sources */,
 				21F4906F2C1A2AF000016D22 /* User.swift in Sources */,
+				21F490752C1B5BC500016D22 /* FavoritesListDataSource.swift in Sources */,
 				21F490732C1A31BC00016D22 /* UserDefaultsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NatureWalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 562VUT28S5;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -338,7 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NatureWalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 562VUT28S5;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

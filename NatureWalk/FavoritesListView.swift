@@ -7,13 +7,14 @@
 import SwiftUI
 
 struct FavoritesListView: View {
-    @ObservedObject var user: User
+    @EnvironmentObject var favoritesListDataSource : FavoritesListDataSource
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(user.favoriteSessions) { session in
-                    NavigationLink(destination: SessionDetailView(selectedSession: session)) {
+                ForEach(favoritesListDataSource.sessionList) { session in
+                    NavigationLink(destination: SessionDetailView(selectedSession: session)
+                        .environmentObject(favoritesListDataSource)) {
                         ListItemView(session: session)
                     }
                 }
@@ -21,7 +22,7 @@ struct FavoritesListView: View {
             }
             .navigationBarTitle("Favorites")
             .navigationBarItems(trailing: Button(action: {
-                user.clearFavorites()
+                favoritesListDataSource.clear()
             }) {
                 Text("Clear All")
             })
@@ -29,15 +30,9 @@ struct FavoritesListView: View {
     }
 
     private func deleteSession(at offsets: IndexSet) {
-        user.favoriteSessions.remove(atOffsets: offsets)
+        favoritesListDataSource.deleteSession(at: offsets)
     }
 }
 
-struct FavoritesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User(email: "test@gmail.com", password: "test123")
-        return FavoritesListView(user: user)
-    }
-}
 
 

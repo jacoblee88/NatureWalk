@@ -10,15 +10,17 @@ import SwiftUI
 struct Toolbar: ViewModifier {
     
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dataSource : DataSource
+    @EnvironmentObject var favoritesListDataSource : FavoritesListDataSource
    
     func body(content: Content) -> some View {
         content
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
-                        NavigationLink {
-                            FavoritesListView(user: User(email: "test@gmail.com", password: "test123"))
-                        } label: {
+                        NavigationLink(destination: FavoritesListView()
+                            .environmentObject(dataSource)
+                            .environmentObject(favoritesListDataSource)) {
                             Text("FavoritesList")
                         }
 

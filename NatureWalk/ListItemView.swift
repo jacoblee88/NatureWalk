@@ -11,10 +11,12 @@ struct ListItemView: View {
     
     var session : Session
     @EnvironmentObject var dataSource : DataSource
-    
+    @EnvironmentObject var favoritesListDataSource : FavoritesListDataSource
     var body: some View {
         NavigationLink{
-            SessionDetailView(selectedSession: session).environmentObject(self.dataSource)
+            SessionDetailView(selectedSession: session)
+                .environmentObject(self.dataSource)
+                .environmentObject(favoritesListDataSource)
         }label: {
             HStack(alignment: .center, spacing: 10){
                 VStack(alignment: .leading, spacing: 10){
