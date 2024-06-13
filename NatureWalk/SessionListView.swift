@@ -19,17 +19,17 @@ struct SessionListView: View {
         NavigationStack{
             VStack{
                 List(dataSource.sessionList){ session in
-                    ListItemView(session: session).environmentObject(self.dataSource)
+                    ListItemView(session: session)
                 }
             } //VStack
-//            .padding()
             .navigationTitle(Text("Sessions List"))
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden()
             .shareToolbar()
         }
         .environmentObject(dataSource)
-        .environmentObject(favoritesListDataSource)//NavigationStack
+        .environmentObject(favoritesListDataSource)
+        //NavigationStack
     } //body
 
     

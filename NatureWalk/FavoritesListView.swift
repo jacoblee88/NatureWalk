@@ -15,7 +15,6 @@ struct FavoritesListView: View {
                 List {
                     ForEach(favoritesListDataSource.sessionList) { session in
                         ListItemView(session: session)
-                            .environmentObject(favoritesListDataSource)
         
                     }
                     .onDelete(perform: deleteSession)
@@ -49,7 +48,6 @@ struct FavoritesListView: View {
     }
     
     private func logout() {
-//        standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
         if let window = UIApplication.shared.windows.first{
             window.rootViewController = UIHostingController(rootView: ContentView())
             window.makeKeyAndVisible()

@@ -21,7 +21,7 @@ struct Toolbar: ViewModifier {
                         NavigationLink(destination: FavoritesListView()
                             .environmentObject(dataSource)
                             .environmentObject(favoritesListDataSource)) {
-                            Text("FavoritesList")
+                            Text("Favorites List")
                         }
 
                         Button(action: {
@@ -38,7 +38,6 @@ struct Toolbar: ViewModifier {
    
     }
     private func logout() {
-//        standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
         if let window = UIApplication.shared.windows.first{
             window.rootViewController = UIHostingController(rootView: ContentView())
             window.makeKeyAndVisible()
