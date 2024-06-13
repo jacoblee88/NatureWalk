@@ -90,7 +90,7 @@ struct ContentView: View {
         }
         
         guard !password.isEmpty else {
-            message = "Please input you assword!"
+            message = "Please input you password!"
             showAlert = true
             return
         }
