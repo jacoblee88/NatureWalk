@@ -24,7 +24,7 @@ struct SessionListView: View {
             .navigationTitle(Text("Sessions List"))
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden()
-            .
+            .shareToolbar()
 //            .toolbar{
 //                ToolbarItem(placement: .topBarTrailing) {
 //                    Menu {

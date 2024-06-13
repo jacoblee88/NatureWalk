@@ -62,6 +62,7 @@ struct SessionDetailView: View {
                 } //VStack
                 .padding()
                 .navigationTitle(Text("Session Details"))
+                .shareToolbar()
             } //ScrollView
         } //NavigationStack
     } //body

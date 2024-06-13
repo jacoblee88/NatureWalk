@@ -44,3 +44,9 @@ struct Toolbar: ViewModifier {
         dismiss()
     }
 }
+
+extension View {
+    func shareToolbar() -> some View {
+        self.modifier(Toolbar())
+    }
+}
