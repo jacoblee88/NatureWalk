@@ -108,11 +108,7 @@ struct ContentView: View {
         }
         linkSelection = 1
         let newUser = User(email: email, password: password)
-        if isRememberMe {
-            newUser.saveToUserDefaults()
-        } else {
-            standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
-        }
+        newUser.saveToUserDefaults()
         
     }
 }
