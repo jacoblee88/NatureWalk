@@ -16,11 +16,9 @@ struct Toolbar: ViewModifier {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
-                        Button(action: {
-                            favoritesList()
-                        }, label: {
-                            Text("FavoritesList")
-                        })
+                        NavigationLink(destination: FavoritesListView()) {
+                            Text("Favorites List")
+                        }
                         
                         Button(action: {
                             logout()
@@ -31,12 +29,11 @@ struct Toolbar: ViewModifier {
                         Image(systemName: "gear")
                             .foregroundStyle(.blue)
                     }
-
                 }
             }
+   
     }
     private func favoritesList() {
-        
     }
     
     private func logout() {

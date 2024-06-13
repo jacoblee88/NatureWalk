@@ -48,10 +48,10 @@ struct SessionDetailView: View {
                         Button{
                             //Add to favorites
                         }label: {
-                            Text("Add to Favorites")
+                            Text("Favorites")
                         }
                         .buttonStyle(.borderedProminent)
-                        ShareLink(item: "\(selectedSession.name), $\(String(selectedSession.pricing))")
+                        ShareLink("Share", item: "\(selectedSession.name), $\(String(selectedSession.pricing))")
                             .buttonStyle(.borderedProminent)
 //                        Button{
 //              
