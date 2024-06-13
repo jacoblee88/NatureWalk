@@ -58,7 +58,18 @@ struct SessionDetailView: View {
                             Text("Share")
                         }
                         .buttonStyle(.borderedProminent)
+                        ShareLink("Share", item: "\(selectedSession.name), $\(String(selectedSession.pricing))")
+                            .buttonStyle(.borderedProminent)
+//                        Button{
+//              
+//                        }label: {
+//                            Text("Share")
+//                        }
+//                        .buttonStyle(.borderedProminent)
                     } //HStack_button
+                    
+                    
+                    
                     Spacer()
                 } //VStack
                 .padding()

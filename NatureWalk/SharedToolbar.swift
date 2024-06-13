@@ -21,6 +21,7 @@ struct Toolbar: ViewModifier {
                         } label: {
                             Text("FavoritesList")
                         }
+
                         Button(action: {
                             logout()
                         }, label: {
@@ -30,14 +31,10 @@ struct Toolbar: ViewModifier {
                         Image(systemName: "gear")
                             .foregroundStyle(.blue)
                     }
-
                 }
             }
+   
     }
-    private func favoritesList() {
-        
-    }
-    
     private func logout() {
         standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
         dismiss()
