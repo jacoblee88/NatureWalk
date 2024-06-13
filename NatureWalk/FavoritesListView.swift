@@ -10,22 +10,49 @@ struct FavoritesListView: View {
     @EnvironmentObject var favoritesListDataSource : FavoritesListDataSource
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(favoritesListDataSource.sessionList) { session in
-                    NavigationLink(destination: SessionDetailView(selectedSession: session)
-                        .environmentObject(favoritesListDataSource)) {
+        NavigationStack {
+            VStack{
+                List {
+                    ForEach(favoritesListDataSource.sessionList) { session in
                         ListItemView(session: session)
+                            .environmentObject(favoritesListDataSource)
+        
+                    }
+                    .onDelete(perform: deleteSession)
+                }
+            }
+            
+            .navigationBarTitle("Favorites")
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Button(action: {
+                            favoritesListDataSource.clear()
+                        }){
+                            Text("Clear All")
+                        }
+                        
+                        Button(action: {
+                            logout()
+                        }, label: {
+                            Text("Logout")
+                        })
+                    }label: {
+                        Image(systemName: "gear")
+                            .foregroundStyle(.blue)
                     }
                 }
-                .onDelete(perform: deleteSession)
             }
-            .navigationBarTitle("Favorites")
-            .navigationBarItems(trailing: Button(action: {
-                favoritesListDataSource.clear()
-            }) {
-                Text("Clear All")
-            })
+            
+        }
+        
+    }
+    
+    private func logout() {
+//        standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
+        if let window = UIApplication.shared.windows.first{
+            window.rootViewController = UIHostingController(rootView: ContentView())
+            window.makeKeyAndVisible()
         }
     }
 

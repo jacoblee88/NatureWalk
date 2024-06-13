@@ -49,23 +49,12 @@ struct SessionDetailView: View {
                         Button{
                             favoritesListDataSource.insetSession(selectedSession) // Add to favorites
                         }label: {
-                            Text("Add to Favorites")
-                        }
-                        .buttonStyle(.borderedProminent)
-                        Button{
-                            // Add share functionality here
-                        }label: {
-                            Text("Share")
+                            Text("Favorites")
                         }
                         .buttonStyle(.borderedProminent)
                         ShareLink("Share", item: "\(selectedSession.name), $\(String(selectedSession.pricing))")
                             .buttonStyle(.borderedProminent)
-//                        Button{
-//              
-//                        }label: {
-//                            Text("Share")
-//                        }
-//                        .buttonStyle(.borderedProminent)
+
                     } //HStack_button
                     
                     
@@ -76,7 +65,10 @@ struct SessionDetailView: View {
                 .navigationTitle(Text("Session Details"))
                 .shareToolbar()
             } //ScrollView
-        } //NavigationStack
+        }
+        .environmentObject(dataSource)
+        .environmentObject(favoritesListDataSource)
+        //NavigationStack
     } //body
 } //View
 

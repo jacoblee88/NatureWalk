@@ -63,7 +63,11 @@ struct ContentView: View {
             }
             .navigationTitle("Login")
             .onAppear() {
-                if let data = standardUserDefaults.value(forKey: UserDefaultsKey.user.rawValue) as? Data,
+                
+                isRememberMe = standardUserDefaults.bool(forKey: UserDefaultsKey.rememberMe.rawValue)
+                
+                if isRememberMe,
+                   let data = standardUserDefaults.value(forKey: UserDefaultsKey.user.rawValue) as? Data,
                    let user = try? JSONDecoder().decode(User.self, from: data) {
                     email = user.email
                     password = user.password
@@ -72,7 +76,7 @@ struct ContentView: View {
                     password = ""
                 }
                 
-                isRememberMe = standardUserDefaults.bool(forKey: UserDefaultsKey.rememberMe.rawValue)
+                
             }
         }
         
@@ -91,7 +95,7 @@ struct ContentView: View {
             return
         }
         
-        guard let user = predefinedUsers.first(where: { $0.email == email }) else {
+        guard let user = predefinedUsers.first(where: { $0.email.lowercased() == email.lowercased() }) else {
             message = "The email address is incorrect!"
             showAlert = true
             return
@@ -105,7 +109,9 @@ struct ContentView: View {
         linkSelection = 1
         let newUser = User(email: email, password: password)
         if isRememberMe {
-            standardUserDefaults.set(try? JSONEncoder().encode(newUser), forKey: UserDefaultsKey.user.rawValue)
+            newUser.saveToUserDefaults()
+        } else {
+            standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
         }
         
     }

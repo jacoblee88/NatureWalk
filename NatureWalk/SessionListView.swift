@@ -27,42 +27,11 @@ struct SessionListView: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden()
             .shareToolbar()
-//            .environmentObject(favoritesListDataSource)
-//            .toolbar{
-//                ToolbarItem(placement: .topBarTrailing) {
-//                    Menu {
-//                        Button(action: {
-//                            favoritesList()
-//                        }, label: {
-//                            Text("FavoritesList")
-//                        })
-//                        
-//                        Button(action: {
-//                            logout()
-//                        }, label: {
-//                            Text("Logout")
-//                        })
-//                    } label: {
-//                        Image(systemName: "gear")
-//                            .foregroundStyle(.blue)
-//                    }
-//
-//                }
-//            }
         }
         .environmentObject(dataSource)
         .environmentObject(favoritesListDataSource)//NavigationStack
     } //body
-    
-//    private func favoritesList() {
-//        
-//    }
-//    
-//    
-//    private func logout() {
-//        userDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
-//        dismiss()
-//    }
+
     
 } //SessionListView
 

@@ -14,5 +14,8 @@ struct User: Codable {
     var email: String
     var password: String
 
+    func saveToUserDefaults() {
+        standardUserDefaults.set(try? JSONEncoder().encode(self), forKey: UserDefaultsKey.user.rawValue)
+    }
 }
 
