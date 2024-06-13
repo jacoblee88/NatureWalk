@@ -24,39 +24,40 @@ struct SessionListView: View {
             .navigationTitle(Text("Sessions List"))
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden()
-            .toolbar{
-                ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
-                        Button(action: {
-                            favoritesList()
-                        }, label: {
-                            Text("FavoritesList")
-                        })
-                        
-                        Button(action: {
-                            logout()
-                        }, label: {
-                            Text("Logout")
-                        })
-                    } label: {
-                        Image(systemName: "gear")
-                            .foregroundStyle(.blue)
-                    }
-
-                }
-            }
+            .
+//            .toolbar{
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    Menu {
+//                        Button(action: {
+//                            favoritesList()
+//                        }, label: {
+//                            Text("FavoritesList")
+//                        })
+//                        
+//                        Button(action: {
+//                            logout()
+//                        }, label: {
+//                            Text("Logout")
+//                        })
+//                    } label: {
+//                        Image(systemName: "gear")
+//                            .foregroundStyle(.blue)
+//                    }
+//
+//                }
+//            }
         } //NavigationStack
     } //body
     
-    private func favoritesList() {
-        
-    }
-    
-    
-    private func logout() {
-        userDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
-        dismiss()
-    }
+//    private func favoritesList() {
+//        
+//    }
+//    
+//    
+//    private func logout() {
+//        userDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
+//        dismiss()
+//    }
     
 } //SessionListView
 
