@@ -16,12 +16,11 @@ struct Toolbar: ViewModifier {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
-                        Button(action: {
-                            favoritesList()
-                        }, label: {
+                        NavigationLink {
+                            FavoritesListView(user: User(email: "test@gmail.com", password: "test123"))
+                        } label: {
                             Text("FavoritesList")
-                        })
-                        
+                        }
                         Button(action: {
                             logout()
                         }, label: {

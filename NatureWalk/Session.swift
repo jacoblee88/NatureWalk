@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Session : Identifiable{
+struct Session : Identifiable,Codable{
     var id: UUID = UUID()
     
     var name: String
