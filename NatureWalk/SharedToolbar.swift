@@ -33,9 +33,6 @@ struct Toolbar: ViewModifier {
             }
    
     }
-    private func favoritesList() {
-    }
-    
     private func logout() {
         standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
         dismiss()
