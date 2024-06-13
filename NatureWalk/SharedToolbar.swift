@@ -40,7 +40,7 @@ struct Toolbar: ViewModifier {
     }
     
     private func logout() {
-        userDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
+        standardUserDefaults.removeObject(forKey: UserDefaultsKey.user.rawValue)
         dismiss()
     }
 }

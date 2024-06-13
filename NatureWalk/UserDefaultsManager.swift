@@ -9,6 +9,7 @@ import Foundation
 
 enum UserDefaultsKey: String {
     case user
+    case rememberMe
 }
 
-let userDefaults = UserDefaults.standard
+let standardUserDefaults = UserDefaults.standard

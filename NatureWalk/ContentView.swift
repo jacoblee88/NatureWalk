@@ -42,6 +42,8 @@ struct ContentView: View {
                     
                     Toggle(isOn: $isRememberMe) {
                         Text("Remember Me")
+                    }.onChange(of: isRememberMe) {
+                        standardUserDefaults.set(isRememberMe, forKey: UserDefaultsKey.rememberMe.rawValue)
                     }
                     
                     Section {
@@ -61,7 +63,7 @@ struct ContentView: View {
             }
             .navigationTitle("Login")
             .onAppear() {
-                if let data = UserDefaults.standard.value(forKey: UserDefaultsKey.user.rawValue) as? Data,
+                if let data = standardUserDefaults.value(forKey: UserDefaultsKey.user.rawValue) as? Data,
                    let user = try? JSONDecoder().decode(User.self, from: data) {
                     email = user.email
                     password = user.password
@@ -69,6 +71,8 @@ struct ContentView: View {
                     email = ""
                     password = ""
                 }
+                
+                isRememberMe = standardUserDefaults.bool(forKey: UserDefaultsKey.rememberMe.rawValue)
             }
         }
         
@@ -101,7 +105,7 @@ struct ContentView: View {
         linkSelection = 1
         let newUser = User(email: email, password: password)
         if isRememberMe {
-            userDefaults.set(try? JSONEncoder().encode(newUser), forKey: UserDefaultsKey.user.rawValue)
+            standardUserDefaults.set(try? JSONEncoder().encode(newUser), forKey: UserDefaultsKey.user.rawValue)
         }
         
     }
